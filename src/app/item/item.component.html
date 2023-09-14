@@ -1,0 +1,16 @@
+<li class="item">
+    <img src="{{data?.imgUrl}}" alt={data.description}/>
+    <div class="details">
+        <p>{{data?.description}}</p>
+        <h2><div><small>Kes </small><span>{{data?.price | currency:'KES':'':'1.2-2'}}</span></div>
+        <div class="buttons"><button (click)="deleteItem(data?.id)">Delete</button><button>Save</button></div>
+        </h2>
+        <strong>Color: {{data?.color}}</strong>
+        <p [style.color]="data?.instock?'green':'orange'">{{data?.instock?'in stock':'out of stock'}}</p>
+        <div class="controls">
+            <button (click)="decrement()">-</button>
+            <span>{{count}}</span>
+            <button (click)="increment()">+</button>
+        </div>
+    </div>
+</li>
